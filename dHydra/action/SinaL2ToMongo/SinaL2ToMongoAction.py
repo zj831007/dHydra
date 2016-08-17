@@ -14,7 +14,7 @@ from dHydra.config import connection as CON
 from dHydra.config import const as C
 from dHydra.core.Functions import *
 # --- 导入自定义配置
-from datetime import datetime
+
 from pandas import DataFrame
 from datetime import datetime
 import time
@@ -47,9 +47,9 @@ class SinaL2ToMongoAction(Action):
 				self.total += 1
 				if data["data_type"] == "deal":
 					self.count += 1
-					result = self.db.stock.l2_deal.insert_one( data )	# 自己建立unique索引
+					result = self.db.stock.l2_deal.save( data )	# 自己建立unique索引
 				elif data["data_type"] == "quotation":
 					self.count += 1
-					result = self.db.stock.l2_quotation.insert_one( data )	# 自己建立unique索引
+					result = self.db.stock.l2_quotation.save( data )	# 自己建立unique索引
 			except Exception as e:
 				self.total += 1

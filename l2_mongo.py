@@ -17,10 +17,10 @@ def init_loger():
 	if not os.path.exists('log'):
 		os.makedirs('log')
 	# 打开下面的输出到文件
-	file_handler = logging.FileHandler('log/error.log')
+	file_handler = logging.FileHandler('log/error.log',encoding='utf-8')
 	file_handler.setLevel(logging.ERROR)
 	file_handler.setFormatter(formatter)
-	file_handler2 = logging.FileHandler('log/debug.log')
+	file_handler2 = logging.FileHandler('log/debug.log',encoding='utf-8')
 	file_handler2.setLevel(logging.INFO)
 	file_handler2.setFormatter(formatter)
 
@@ -47,10 +47,14 @@ def main():
 				"name"	  :	"SinaLevel2WS"
 			,   "producer_name"	 :   "L2.All"
 			,   "query"	 :  ['quotation','deal']	# 这里选择订阅的L2内容，quotation代表行情，deal代表逐笔，orders代表大单 这样['quotation','deal']
-			,	"symbols":  symbols
+			,	"symbols":  ["sz002643","sz002751","sz002392","sh601727","sh600149",
+							  "sz000002","sz002594","sz000776","sz000063","sz002202",
+							  "sz000039","sz000338","sz000157","sz000898","sz000513",
+							  "sz002672","sz000488","sz000921","sz002703","sz002490",
+							  "sz000756","sz000585"]
 			}
 			]
-			,"num_min" : 1				# 最低线程数
+			,"num_min" : 2				# 最低线程数
 			,"num_max" : 20				# 最多线程数
 			,"lower_threshold" : 0		# 当消息队列数量低于lower_threshold时候，会动态添加
 			,"upper_threshold" : 3000	# 当消息队列数量超过upper_threshold时候，会动态添加
