@@ -47,11 +47,8 @@ def main():
 				"name"	  :	"SinaLevel2WS"
 			,   "producer_name"	 :   "L2.All"
 			,   "query"	 :  ['quotation','deal']	# 这里选择订阅的L2内容，quotation代表行情，deal代表逐笔，orders代表大单 这样['quotation','deal']
-			,	"symbols":  ["sz002643","sz002751","sz002392","sh601727","sh600149",
-							  "sz000002","sz002594","sz000776","sz000063","sz002202",
-							  "sz000039","sz000338","sz000157","sz000898","sz000513",
-							  "sz002672","sz000488","sz000921","sz002703","sz002490",
-							  "sz000756","sz000585"]
+			,	"symbols":  ["sz002643","sz002751","sz002392","sh601727","sh600149","sz002495",
+							  "sh600705"]
 			}
 			]
 			,"num_min" : 2				# 最低线程数
